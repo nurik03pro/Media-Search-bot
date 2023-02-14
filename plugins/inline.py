@@ -20,7 +20,7 @@ async def answer(bot, query):
         await query.answer(
             results=[],
             cache_time=0,
-            switch_pm_text='You have to subscribe channel',
+            switch_pm_text='Kanalga azo boling',
             switch_pm_parameter="subscribe",
         )
         return
@@ -44,7 +44,7 @@ async def answer(bot, query):
                 title=file.file_name,
                 document_file_id=file.file_id,
                 caption=file.caption or "",
-                description=f'Size: {size_formatter(file.file_size)}\nType: {file.file_type}',
+                description=f'[{size_formatter(file.file_size)}]\n {file.file_name}',
                 reply_markup=reply_markup
             )
         )
